@@ -6,7 +6,12 @@
 :root{
   font-size: 62.5%;
 
-
+  --light-pink: 245, 210, 210;
+  --light-yellow: 248, 247, 186;
+  --light-green: 189, 227, 195;
+  --light-blue: 163, 204, 218;
+  --dark-text-color: 65, 30, 30;
+  --light-text-color: 255, 230, 230;
 }
 
 body{
@@ -15,20 +20,53 @@ body{
   grid-template-rows: 15vh 1fr;
   grid-template-areas: "sidebar header"
                       "sidebar main";
+  gap: 2px;
+
+  font-size: 1.6rem;
 }
 
 .header{
   grid-area: header;
-  background-color: aqua;
+  border: 1px solid darkgoldenrod;
 }
 
+/* 
+
+sidebar section */
 .sidebar{
   grid-area: sidebar;
-  background-color: bisque;
+  border:1px solid blueviolet;
+  background-color: rgb(var(--light-green), 0.4);
+  color: rgb(var(--dark-text-color));
+
+  display: grid;
+  grid-template-rows: 5rem 1fr;
 }
+
+.nav {
+  display: grid;
+  grid-template-rows: 35rem 25rem;
+  gap: 3rem;
+}
+
+.navigations,
+.prefs{
+  display: grid;
+}
+
+.navigations {
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.prefs {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+
+
 
 .main-container {
   grid-area: main;
-  background-color: blue;
+  border: 1px solid green;
   height: 100rem;
 }
