@@ -235,10 +235,11 @@ main section */
 .main-container {
   grid-area: main;
   border: 1px solid green;
+  background-color: #f9f9f9;
 
   display: grid;
   grid-template-columns: 3fr minmax(20rem, 1fr);
-  grid-template-rows: 40rem 25rem 1fr;
+  grid-template-rows: 40rem 32rem 1fr;
   grid-template-areas:
     "project announce"
     "project trends"
@@ -254,8 +255,7 @@ main section */
   padding: 0 1rem;
 }
 
-.main-title{
-  
+.main-title {
 }
 
 .proj-card-container {
@@ -275,10 +275,9 @@ main section */
   border-radius: 0.8rem;
   box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.15);
   padding: 0 1rem 0 2rem;
-
 }
 
-.proj-title{
+.proj-title {
   display: flex;
   align-items: center;
   font-size: 2rem;
@@ -307,7 +306,6 @@ main section */
   left: -0.1rem;
   border-radius: 0.8rem 0 0 0.8rem;
 }
-
 
 .announce {
   grid-area: announce;
@@ -352,19 +350,29 @@ main section */
   position: absolute;
   bottom: 0;
   right: 0;
-  background: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 40%,rgba(255, 255, 255, 1) 50%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 40%,
+    rgba(255, 255, 255, 1) 50%
+  );
   width: 10ch;
   height: 2ch;
   z-index: 1;
 }
 
 .ann-card:not(:first-of-type)::after {
-  /* border-image: 2px solid linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%); */
   content: "";
   position: absolute;
   height: 1px;
   width: 90%;
-  background: linear-gradient(90deg,rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0) 100%
+  );
   top: 0;
   left: 5%;
   z-index: 1;
@@ -372,4 +380,38 @@ main section */
 
 .trends {
   grid-area: trends;
+  display: grid;
+  grid-template-rows: 3rem auto;
+  padding: 0 1rem;
+  row-gap: 1rem;
+}
+
+.trend-container {
+  display: grid;
+  /* row-gap: 1rem; */
+  grid-template-rows: repeat(4, 7rem);
+  border: 1px solid black;
+  border-radius: 0.8rem;
+}
+.trend-card {
+  display: grid;
+  grid-template-columns: 6rem auto;
+  grid-template-rows: 3rem 3rem;
+  grid-template-areas:
+    "prof-pic username"
+    "prof-pic user-line";
+}
+
+.trend-card > .prof-pic {
+  grid-area: prof-pic;
+}
+
+.trend-card .username {
+  grid-area: username;
+  align-self: end;
+  font-size: 1.8rem;
+}
+
+.trend-card .user-line {
+  grid-area: user-line;
 }
